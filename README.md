@@ -25,9 +25,40 @@ I will link all white papers I find below for later reading:
 
 --- 
 
-## Data Stores
+## Data Stores 
+
+#### Key Concepts/Terms
+
+**Three Types of Data Store:**
+- **Persistent Data Stores** - Durable and sticks around after reboot. 
+  - EX: Glacier/RDS
+- **Transient Data Stores** - Temporarily stored so that it can be passed along to another service or storage medium. 
+  - EX: SQS/SNS
+- **Ephemeral Data Stores** - Does not persist to disk. You reboot, you lose. 
+  - EX: EC2 Instance Store or Memcached/Redis
+
+**IOPS vs. Throughput**
+    - **IOPS:** Measure of how fast we can read/write to a device. 
+    - **Througput:** Measure of how much data can be moved at a time
+
+**Consistency**
+ - Consistency is far better than rare moments of greatness - Scott Ginsberg - Consistency in data stores regards the rules with which that particular data store behaves when handling the data. In theory, the data store should always follow its consistency model
+
+ **Consistency Models**
+ - **ACID:** (Think MySQL)
+    - **A**tomic: Transactions are all or nothing. They happen or they don't. 
+    - **C**onsistent: Transactions must be validated (think ANSI) or they will not happen. 
+    - **I**solated: One transaction can't mess with another. 
+    - **D**urable: Completed Transaction must stick around. 
+ - **BASE:** (Think Fastly)
+   - **B**asic **A**vailability - Values must be present even if stale
+   - **S**oft-state - Might not be instantly consistent across all stores
+   - **E**ventual Consistency - Achieved at some point. Eventually.
+
 
 #### S3
+
+
 
 #### Glacier
 
